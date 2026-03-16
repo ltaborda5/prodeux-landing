@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProdeUX - El Prode Privado para tu Empresa | Mundial 2026</title>
+    <meta name="description" content="Plataforma de predicciones privada para empresas. Conectá a tus equipos durante el Mundial 2026 con un prode exclusivo.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'prode-dark': '#101522',
+                        'prode-blue': '#1142d4',
+                        'prode-accent': '#00d4ff',
+                        'arg-gold': '#FFD700',
+                        'arg-sky': '#6CACE4',
+                        'fifa-gold': '#C9A227',
+                    },
+                    fontFamily: {
+                        'lexend': ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Lexend', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        .glow-blue { box-shadow: 0 0 40px rgba(17, 66, 212, 0.3); }
+        .glow-gold { box-shadow: 0 0 40px rgba(201, 162, 39, 0.3); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .countdown-item {
+            background: linear-gradient(135deg, rgba(17,66,212,0.2) 0%, rgba(17,66,212,0.05) 100%);
+            border: 1px solid rgba(17,66,212,0.3);
+        }
+        .countdown-gold {
+            background: linear-gradient(135deg, rgba(201,162,39,0.2) 0%, rgba(201,162,39,0.05) 100%);
+            border: 1px solid rgba(201,162,39,0.3);
+        }
+        .world-cup-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L43 45 L30 35 L17 45 L22 30 L10 20 L25 20 Z' fill='none' stroke='rgba(201,162,39,0.1)' stroke-width='1'/%3E%3C/svg%3E");
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #FFD700 0%, #6CACE4 50%, #fff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-prode-dark text-white antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-arg-gold to-arg-sky rounded-xl flex items-center justify-center relative overflow-hidden">
+                        <span class="material-symbols-outlined text-white">sports_soccer</span>
+                        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-black/20"></div>
+                    </div>
+                    <span class="text-xl font-bold">Prode<span class="text-arg-gold">UX</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features" class="text-gray-300 hover:text-white text-sm">Features</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white text-sm">Precios</a>
+                    <a href="#faq" class="text-gray-300 hover:text-white text-sm">FAQ</a>
+                    <a href="https://wa.me/5493434571339?text=Hola!%20V%C3%AD%20la%20landing%20de%20ProdeUX%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20empresa" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-arg-gold to-arg-sky rounded-xl font-medium text-sm text-black hover:scale-105 transition-transform">Contactar por WhatsApp</a>
+                </div>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden p-2">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#features" class="block text-gray-300 py-2">Features</a>
+                <a href="#pricing" class="block text-gray-300 py-2">Precios</a>
+                <a href="#faq" class="block text-gray-300 py-2">FAQ</a>
+                <a href="https://wa.me/5493434571339?text=Hola!%20V%C3%AD%20la%20landing%20de%20ProdeUX%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20empresa" class="block py-2 text-arg-gold font-medium">Contactar por WhatsApp →</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-32 overflow-hidden world-cup-pattern">
+        <div class="absolute inset-0 bg-gradient-to-b from-prode-dark/50 via-prode-dark/80 to-prode-dark"></div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-arg-sky/20 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-arg-gold/10 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Badge Mundial -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border-arg-gold/30">
+                <span class="text-2xl">🏆</span>
+                <span class="text-sm text-gray-300">FIFA World Cup 2026</span>
+                <span class="px-2 py-0.5 bg-arg-gold/20 text-arg-gold text-xs rounded-full">Activo en 24hs</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                El Prode <span class="gradient-text">Mundialista</span><br>
+                <span class="text-4xl sm:text-5xl">para tu Empresa 🇦🇷</span>
+            </h1>
+
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                Unite a la fiebre del Mundial 2026 con una plataforma privada para tu equipo.<br>
+                <span class="text-white font-medium">Predicciones, ranking interno y la emoción de alentar junto a tus compañeros.</span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="https://wa.me/5493434571339?text=Hola!%20V%C3%AD%20la%20landing%20de%20ProdeUX%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20empresa" target="_blank" class="px-8 py-4 bg-gradient-to-r from-arg-gold to-arg-sky rounded-2xl font-semibold text-lg hover:scale-105 transition-transform text-black glow-gold">💬 Contactar por WhatsApp</a>
+                <a href="#pricing" class="px-8 py-4 glass rounded-2xl font-semibold text-lg hover:bg-white/10">Ver Precios en AR$</a>
+            </div>
+
+            <!-- Countdown -->
+            <div class="flex justify-center gap-4 mb-16">
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="days">00</div><div class="text-xs text-gray-400">Días</div></div>
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="hours">00</div><div class="text-xs text-gray-400">Horas</div></div>
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="minutes">00</div><div class="text-xs text-gray-400">Min</div></div>
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="seconds">00</div><div class="text-xs text-gray-400">Seg</div></div>
+            </div>
+
+            <!-- Mockup -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="glass-card rounded-3xl p-2 glow-gold border-arg-gold/30">
+                    <div class="bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-arg-gold to-arg-sky rounded-xl flex items-center justify-center"><span class="material-symbols-outlined text-white">sports_soccer</span></div>
+                                    <div><div class="font-semibold">Prode 🇦🇷 Tu Empresa</div><div class="text-xs text-gray-400">Mundial 2026</div></div>
+                                </div>
+                                <div class="flex items-center gap-2"><span class="text-sm text-gray-400">Tu posición:</span><span class="px-3 py-1 bg-arg-gold/20 text-arg-gold rounded-full text-sm font-bold">🥇 #1</span></div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="glass-card rounded-xl p-4 border-arg-gold/20">
+                                    <div class="flex items-center justify-between mb-4"><span class="text-xs text-gray-400">Hoy 16:00 🏆</span><span class="px-2 py-0.5 bg-green-500/20 text-green-400 text-xs rounded-full">En vivo</span></div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-center"><div class="text-3xl mb-1">🇦🇷</div><div class="text-sm font-medium">Argentina</div></div>
+                                        <div class="text-xl font-bold text-arg-gold">VS</div>
+                                        <div class="text-center"><div class="text-3xl mb-1">🇧🇷</div><div class="text-sm font-medium">Brasil</div></div>
+                                    </div>
+                                    <div class="mt-4 flex gap-2"><button class="flex-1 py-2 bg-arg-gold/20 border border-arg-gold/30 rounded-lg text-sm text-arg-gold font-medium">2-1 ⚽</button><button class="flex-1 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-400">Editar</button></div>
+                                </div>
+                                <div class="glass-card rounded-xl p-4 border-arg-sky/20">
+                                    <div class="flex items-center justify-between mb-4"><span class="text-xs text-gray-400">Mañana 14:00</span><span class="px-2 py-0.5 bg-arg-sky/20 text-arg-sky text-xs rounded-full">Próximo</span></div>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-center"><div class="text-3xl mb-1">🇫🇷</div><div class="text-sm font-medium">Francia</div></div>
+                                        <div class="text-xl font-bold text-gray-500">VS</div>
+                                        <div class="text-center"><div class="text-3xl mb-1">🇩🇪</div><div class="text-sm font-medium">Alemania</div></div>
+                                    </div>
+                                    <div class="mt-4 flex gap-2"><button class="flex-1 py-2 bg-white/5 border border-white/10 rounded-lg text-sm hover:bg-white/10">Predecir →</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-32 relative">
+        <div class="absolute inset-0 world-cup-pattern opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-prode-dark via-transparent to-prode-dark"></div>
+        <div class="relative max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <span class="text-arg-gold text-sm uppercase flex items-center justify-center gap-2"><span class="text-2xl">⚽</span> Features</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6">Todo lo de un prode,<br>pero <span class="text-arg-gold">profesional</span></h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">La emoción del Mundial, la privacidad de tu empresa.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-arg-gold/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3">Espacio Privado</h3>
+                    <p class="text-gray-400">Cada empresa tiene su propio subdominio aislado. Solo tus empleados compiten entre ellos.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-arg-sky/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">🏆</div>
+                    <h3 class="text-xl font-bold mb-3">Ranking Interno</h3>
+                    <p class="text-gray-400">Tabla de posiciones por empresa. Ver quién lidera genera conversaciones en el pasillo.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">⚡</div>
+                    <h3 class="text-xl font-bold mb-3">Puntaje Automático</h3>
+                    <p class="text-gray-400">Multiplicadores por fase: Grupos 3pts, Octavos 6pts, Cuartos 9pts, Final 15pts.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">💬</div>
+                    <h3 class="text-xl font-bold mb-3">Comunidad Integrada</h3>
+                    <p class="text-gray-400">Posts, comentarios y reacciones. Celebrá los goles y burlate sanamente de los errores.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">⏰</div>
+                    <h3 class="text-xl font-bold mb-3">Deadlines Automáticos</h3>
+                    <p class="text-gray-400">Predicciones cierran 15 min antes. Recordatorios automáticos para que nadie se olvide.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 group hover:border-arg-gold/50 transition-colors">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">📊</div>
+                    <h3 class="text-xl font-bold mb-3">Analytics RRHH</h3>
+                    <p class="text-gray-400">Reportes de participación, engagement por departamento y métricas de conexión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-32 bg-gradient-to-b from-transparent to-arg-gold/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <span class="text-arg-gold text-sm uppercase flex items-center justify-center gap-2"><span class="text-2xl">🚀</span> Implementación</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6">Activo en 24 horas</h2>
+                <p class="text-gray-400 text-lg">Sin configuración compleja. Empezás a jugar el mismo día.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-arg-gold to-arg-sky rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-black">1️⃣</div>
+                    <h3 class="text-lg font-bold mb-2">Elegís plan</h3>
+                    <p class="text-gray-400 text-sm">Según cantidad de empleados. Pagás una sola vez.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-arg-gold to-arg-sky rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-black">2️⃣</div>
+                    <h3 class="text-lg font-bold mb-2">Configuramos</h3>
+                    <p class="text-gray-400 text-sm">Tu espacio privado con logo y colores.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-arg-gold to-arg-sky rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-black">3️⃣</div>
+                    <h3 class="text-lg font-bold mb-2">Invitamos</h3>
+                    <p class="text-gray-400 text-sm">Subís emails y el sistema envía todo.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-arg-gold to-arg-sky rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-black">4️⃣</div>
+                    <h3 class="text-lg font-bold mb-2">¡A alentar! 🇦🇷</h3>
+                    <p class="text-gray-400 text-sm">Empiezan las predicciones y la diversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-32">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20">
+                <span class="text-arg-gold text-sm uppercase flex items-center justify-center gap-2"><span class="text-2xl">💰</span> Precios en Pesos Argentinos</span>
+                <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6">Un solo pago.<br><span class="text-arg-gold">Sin suscripciones.</span></h2>
+                <p class="text-gray-400 text-lg">Pagás una vez por todo el Mundial 2026. Acceso completo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Starter -->
+                <div class="glass-card rounded-2xl p-8 hover:border-arg-gold/30 transition-colors">
+                    <div class="text-sm text-gray-400 mb-2">20-50 empleados</div>
+                    <div class="text-4xl font-bold mb-1">AR$ <span class="text-arg-gold">150.000</span></div>
+                    <div class="text-sm text-gray-500 mb-6">Pago único</div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Todas las funciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Sin límite de predicciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="https://wa.me/5493434571339?text=Hola!%20Quiero%20el%20plan%20de%2020-50%20empleados%20para%20ProdeUX" class="block w-full py-3 text-center border border-arg-gold/30 rounded-xl hover:bg-arg-gold/10">Consultar por WhatsApp</a>
+                </div>
+                <!-- Growth -->
+                <div class="glass-card rounded-2xl p-8 border-arg-gold relative glow-gold">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-arg-gold text-black text-xs font-bold rounded-full">⭐ Más Popular</div>
+                    <div class="text-sm text-gray-400 mb-2">51-100 empleados</div>
+                    <div class="text-4xl font-bold mb-1">AR$ <span class="text-arg-gold">250.000</span></div>
+                    <div class="text-sm text-gray-500 mb-6">Pago único</div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Todas las funciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Sin límite de predicciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="https://wa.me/5493434571339?text=Hola!%20Quiero%20el%20plan%20de%2051-100%20empleados%20para%20ProdeUX" class="block w-full py-3 text-center bg-gradient-to-r from-arg-gold to-arg-sky rounded-xl hover:opacity-90 font-bold text-black">Elegir Plan</a>
+                </div>
+                <!-- Business -->
+                <div class="glass-card rounded-2xl p-8 hover:border-arg-gold/30 transition-colors">
+                    <div class="text-sm text-gray-400 mb-2">101-300 empleados</div>
+                    <div class="text-4xl font-bold mb-1">AR$ <span class="text-arg-gold">450.000</span></div>
+                    <div class="text-sm text-gray-500 mb-6">Pago único</div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Todas las funciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Sin límite de predicciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="https://wa.me/5493434571339?text=Hola!%20Quiero%20el%20plan%20de%20101-300%20empleados%20para%20ProdeUX" class="block w-full py-3 text-center border border-arg-gold/30 rounded-xl hover:bg-arg-gold/10">Consultar por WhatsApp</a>
+                </div>
+                <!-- Enterprise -->
+                <div class="glass-card rounded-2xl p-8 hover:border-arg-gold/30 transition-colors">
+                    <div class="text-sm text-gray-400 mb-2">301-1000 empleados</div>
+                    <div class="text-4xl font-bold mb-1">AR$ <span class="text-arg-gold">750.000</span></div>
+                    <div class="text-sm text-gray-500 mb-6">Pago único</div>
+                    <ul class="space-y-3 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Todas las funciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Sin límite de predicciones</li>
+                        <li class="flex items-center gap-2"><span class="text-arg-gold">✓</span> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="https://wa.me/5493434571339?text=Hola!%20Quiero%20el%20plan%20de%20301-1000%20empleados%20para%20ProdeUX" class="block w-full py-3 text-center border border-arg-gold/30 rounded-xl hover:bg-arg-gold/10">Consultar por WhatsApp</a>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl p-8 text-center">
+                <p class="text-gray-400 mb-2">¿Más de 1000 empleados? 🏢</p>
+                <p class="text-lg mb-4">Plan Enterprise con precios personalizados.</p>
+                <a href="mailto:lean@myappux.com.ar" class="text-arg-gold hover:underline font-medium">Contactanos →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-32 bg-gradient-to-b from-arg-gold/5 to-transparent">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-arg-gold text-sm uppercase flex items-center justify-center gap-2"><span class="text-2xl">❓</span> FAQ</span>
+                <h2 class="text-4xl font-bold mt-4">Preguntas Frecuentes</h2>
+            </div>
+            <div class="space-y-4">
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'" class="w-full px-6 py-4 flex items-center justify-between text-left"><span class="font-medium">¿Cuánto tarda en estar lista?</span><span class="material-symbols-outlined transition-transform">expand_more</span></button>
+                    <div class="hidden px-6 pb-4 text-gray-400">Tu prode está activo en 24 horas desde el pago. Configuramos todo y enviamos las invitaciones.</div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'" class="w-full px-6 py-4 flex items-center justify-between text-left"><span class="font-medium">¿Otras empresas ven nuestro prode?</span><span class="material-symbols-outlined transition-transform">expand_more</span></button>
+                    <div class="hidden px-6 pb-4 text-gray-400">No. Cada empresa tiene su espacio aislado con subdominio propio. Solo tus empleados pueden ver y participar.</div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'" class="w-full px-6 py-4 flex items-center justify-between text-left"><span class="font-medium">¿Qué pasa si se olvidan de predecir?</span><span class="material-symbols-outlined transition-transform">expand_more</span></button>
+                    <div class="hidden px-6 pb-4 text-gray-400">El sistema envía recordatorios 24hs y 2hs antes. Si no predicen, no suman puntos ese partido.</div>
+                </div>
+                <div class="glass-card rounded-xl overflow-hidden">
+                    <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('span').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'" class="w-full px-6 py-4 flex items-center justify-between text-left"><span class="font-medium">¿Podemos dar premios?</span><span class="material-symbols-outlined transition-transform">expand_more</span></button>
+                    <div class="hidden px-6 pb-4 text-gray-400">¡Sí! Recomendamos premios para aumentar la participación. Podés configurar premios por fase y el ganador final.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-32 relative overflow-hidden world-cup-pattern">
+        <div class="absolute inset-0 bg-gradient-to-r from-arg-gold/20 to-arg-sky/20"></div>
+        <div class="absolute inset-0 bg-prode-dark/80"></div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">🏆 El Mundial empieza en...</h2>
+            <div class="flex justify-center gap-4 mb-8">
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="days-cta">00</div><div class="text-xs text-gray-400">Días</div></div>
+                <div class="countdown-gold rounded-2xl p-4 min-w-[80px]"><div class="text-3xl font-bold text-arg-gold" id="hours-cta">00</div><div class="text-xs text-gray-400">Horas</div></div>
+            </div>
+            <p class="text-xl text-gray-300 mb-8">Implementaciones cierran el 1 de junio. Después, esperamos al 2030.</p>
+            <a href="https://wa.me/5493434571339?text=Hola!%20V%C3%AD%20la%20landing%20de%20ProdeUX%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20empresa" target="_blank" class="px-8 py-4 bg-gradient-to-r from-arg-gold to-arg-sky rounded-2xl font-semibold text-lg hover:scale-105 transition-transform text-black glow-gold">💬 Escribir por WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gradient-to-br from-arg-gold to-arg-sky rounded-lg flex items-center justify-center text-sm">⚽</div>
+                <span class="font-bold">Prode<span class="text-arg-gold">UX</span></span>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-white">Términos</a>
+                <a href="#" class="hover:text-white">Privacidad</a>
+                <a href="mailto:lean@myappux.com.ar" class="hover:text-white">Contacto</a>
+            </div>
+            <div class="text-sm text-gray-500">🇦🇷 Hecho en Argentina · 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        function updateCountdown() {
+            const mundialDate = new Date('2026-06-11T00:00:00');
+            const now = new Date();
+            const diff = mundialDate - now;
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                document.getElementById('days-cta').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours-cta').textContent = String(hours).padStart(2, '0');
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
